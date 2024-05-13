@@ -1,4 +1,4 @@
-export class Empoloyee{
+export class Employee{
     public name:string|null=null;
     public surname:string|null=null;
     public position:string|null=null;
