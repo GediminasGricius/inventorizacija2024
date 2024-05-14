@@ -34,7 +34,7 @@ export class ListItemsComponent {
         // prie kiekvieno įrašo priskiriame darbuotoją kur id ir responsible_employee_id sutampa
         .pipe(
           map((data)=>{
-            //Ciklas kuris eina per visus įrašus
+            //Ciklas kuris eina per visus įrašus.
             data.forEach((item,itemId)=>{
               //Ciklas kuris eina per visus darbuotojus
               this.employees.forEach((employee, employeeId)=>{

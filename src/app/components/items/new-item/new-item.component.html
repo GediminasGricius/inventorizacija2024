@@ -10,11 +10,18 @@
                     <div class="col-sm-9">
                         <input 
                             class="form-control" 
-                            [class.is-invalid]="!itemForm.get('inv_number')?.valid && itemForm.get('inv_number')?.touched" 
+                            [class.is-invalid]="!itemForm.get('inv_number')?.valid && itemForm.get('inv_number')?.touched && !itemForm.get('inv_number')?.pending" 
                             formControlName="inv_number" 
+                            
                         >
-                        <div  class="helper-block" *ngIf="!itemForm.get('inv_number')?.valid && itemForm.get('inv_number')?.touched"  >
+                       
+                        <div  class="helper-block" *ngIf="!itemForm.get('inv_number')?.valid && itemForm.get('inv_number')?.touched && !itemForm.get('inv_number')?.pending"  >
                                Inventorizacijos numeris yra privalomas, šablonas AAA00000
+                        </div>
+                        <div *ngIf="itemForm.get('inv_number')?.pending">
+                            <div class="spinner-border" role="status" >
+                                <span class="visually-hidden">Loading...</span>
+                              </div>
                         </div>
                     </div>
                 </div>
