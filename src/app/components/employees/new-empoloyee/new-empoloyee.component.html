@@ -20,10 +20,15 @@
                             maxlength="32" 
                             pattern="[a-zA-Z ]*" 
                             #inputName="ngModel"
+                            [@inputFileds]="inputState[0]"
+                            (focus)="inputFocus(0,true)"
+                            (blur)="inputFocus(0,false)"
+                            
                         >
                         <div 
                             class="helper-block " 
                             *ngIf="!inputName.valid && inputName.touched"
+                            [@errorBlock]
                             >
                                 Vardas yra privalomas, turi būti 2-32 simbolių ilgio, galima įvesti tik raides ir tarpą
                             </div>
@@ -44,10 +49,14 @@
                             maxlength="32" 
                             pattern="[a-zA-Z ]*" 
                             #inputSurname="ngModel"
+                            [@inputFileds]="inputState[1]"
+                            (focus)="inputFocus(1, true)"
+                            (blur)="inputFocus(1, false)"
                         >
                         <div
                          class="helper-block "
                          *ngIf="!inputSurname.valid && inputSurname.touched"
+                         [@errorBlock]
                         >
                             Pavardė yra privaloma, turi būti 2-32 simbolių ilgio, galima įvesti tik raides ir tarpą
                         </div>
@@ -65,10 +74,14 @@
                             ngModel 
                             required
                             #inputPosition="ngModel"
+                            [@inputFileds]="inputState[2]"
+                            (focus)="inputFocus(2, true)"
+                            (blur)="inputFocus(2, false)"
                         >
                         <div 
                             class="helper-block "
                             *ngIf="!inputPosition.valid && inputPosition.touched"
+                            [@errorBlock]
                         >
                             Pozicijos laukelis yra privalomas
                         </div>
@@ -87,11 +100,15 @@
                             required 
                             email
                             #inputEmail="ngModel"
+                            [@inputFileds]="inputState[3]"
+                            (focus)="inputFocus(3, true)"
+                            (blur)="inputFocus(3, false)"
+
                         >
                         <div 
                             class="helper-block "
                             *ngIf="!inputEmail.valid && inputEmail.touched"
-                        
+                            [@errorBlock]
                         >
                             Elektroninis paštas yra privalomas, turi būti pateiktas validus adresas
                         </div>
@@ -112,12 +129,15 @@
                             birthYearValidator
                             
                             #inputBirthYear="ngModel"
+                            [@inputFileds]="inputState[4]"
+                            (focus)="inputFocus(4, true)"
+                            (blur)="inputFocus(4, false)"
                             
                         >
                         <div 
                             class="helper-block "
                             *ngIf="!inputBirthYear.valid && inputBirthYear.touched"
-
+                            [@errorBlock]
                         >
                            Metai yra privalomas laukas, ne ankstesni nei 1900 ir darbuotojas privalo būti pilnametis
                         </div>
